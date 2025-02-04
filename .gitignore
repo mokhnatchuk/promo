@@ -1,0 +1,149 @@
+# Environment
+.env
+.venv
+.venv/
+venv/
+ENV/
+env/
+Scripts/
+Lib/
+Include/
+pyvenv.cfg
+!.env.example
+!.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.pyc
+*.egg
+*.egg-info/
+dist/
+build/
+.sass-cache/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+pip-log.txt
+pip-delete-this-directory.txt
+htmlcov/
+.pytest_cache/
+.hypothesis/
+
+# Django
+*.log
+media/
+static/
+db.sqlite3
+*.sqlite3
+migrations/
+!migrations/__init__.py
+
+# Zed
+.zed/
+.zed-state
+.zed-session
+
+# VS Code
+.vscode/
+*.code-workspace
+.history/
+
+# PyCharm
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+.sublime-project
+.sublime-workspace
+
+# Atom
+.atom/
+.atom-config.cson
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# System files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.lnk
+*~
+.directory
+
+# macOS
+.AppleDouble/
+.LSOverride
+Icon?
+._*
+
+# Windows
+$RECYCLE.BIN/
+System Volume Information/
+
+# Linux
+*~
+.*.swp
+.*.swo
+
+# Cache
+.cache/
+*.cache
+
+# Logs and Databases
+*.log
+*.sqlite3
+*.db
+*.db3
+*.sql
+
+# Translations
+locale/
+translations/
+
+# Backup files
+*.bak
+*.tmp
+
+# Testing and Coverage
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+pip-log.txt
+pip-delete-this-directory.txt
+htmlcov/
+.pytest_cache/
+.hypothesis/
+
+# Virtual Environments
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+pip-log.txt
+pip-delete-this-directory.txt
+htmlcov/
+.pytest_cache/
+.hypothesis/
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+.docker/
