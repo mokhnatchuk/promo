@@ -25,3 +25,6 @@ class Price(models.Model):
 # Я налаштуємо сервер треба буде зробити міграції:
 # python manage.py makemigrations
 # python manage.py migrate
+
+# Було знайдено скрипти models.py та admin.py в теці /promo_project/product/templates
+# Обдумати перенесення цих скриптів туди!
