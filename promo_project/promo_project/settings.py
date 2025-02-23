@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'products',
     'promo_project',
     'main',
+    'map'
 ]
 
 MIDDLEWARE = [
