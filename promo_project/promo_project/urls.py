@@ -14,13 +14,24 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from logging import root
 from django.contrib import admin
 from django.urls import path, include
 
+# Імпорт бібліотек для роботи зі статистичними файлами в режимі розробки
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('main.urls')),
+    path('', include('home.urls')),
     path('products/', include('products.urls')),
     path('promotions/', include('promotions.urls')),
     path('stores/', include('stores.urls')),
+    path('map/', include('map.urls'))
 ]
+
+# Дозвіл для Django показувати css файли під час розробки
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
