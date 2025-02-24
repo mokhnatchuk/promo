@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'stores',
     'products',
     'promo_project',
-    'main',
+    'home',
     'map'
 ]
 
