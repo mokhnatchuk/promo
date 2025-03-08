@@ -14,6 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+<<<<<<< HEAD
 from logging import root
 from django.contrib import admin
 from django.urls import path, include
@@ -35,3 +36,15 @@ urlpatterns = [
 # Дозвіл для Django показувати css файли під час розробки
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+=======
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('main.urls')),
+    path('products/', include('products.urls')),
+    path('promotions/', include('promotions.urls')),
+    path('stores/', include('stores.urls')),
+]
+>>>>>>> 29a63755d6a9a53d1586c88cc640e7b694ef106e
