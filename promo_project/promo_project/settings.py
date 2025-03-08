@@ -48,12 +48,9 @@ INSTALLED_APPS = [
     'stores',
     'products',
     'promo_project',
-<<<<<<< HEAD
     'home',
     'map'
-=======
     'main',
->>>>>>> 29a63755d6a9a53d1586c88cc640e7b694ef106e
 ]
 
 MIDDLEWARE = [
@@ -71,11 +68,8 @@ ROOT_URLCONF = 'promo_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-<<<<<<< HEAD
         'DIRS': [BASE_DIR / 'templates'],
-=======
         'DIRS': [],
->>>>>>> 29a63755d6a9a53d1586c88cc640e7b694ef106e
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -144,12 +138,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-<<<<<<< HEAD
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [BASE_DIR / 'static']
-=======
 STATICFILES_DIRS = []
->>>>>>> 29a63755d6a9a53d1586c88cc640e7b694ef106e
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
