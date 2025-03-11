@@ -1,0 +1,74 @@
+.stores-section {
+    padding: 2rem 0;
+}
+
+.section-header {
+    margin-bottom: 2rem;
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.store-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.store-header {
+    margin-bottom: 1rem;
+}
+
+.store-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.store-info {
+    margin-bottom: 1rem;
+}
+
+.store-info p {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.store-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Пагінація */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.pagination-link {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+}
+
+.pagination-link.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.pagination-link:hover:not(.active) {
+    background: #f8f9fa;
+}

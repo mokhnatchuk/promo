@@ -1,6 +1,6 @@
 from django.shortcuts import render
-
-# Create your views here.
+from .models import Store
 
 def index(request):
-    return render(request, 'stores/index.html')
+    stores = Store.objects.all()
+    return render(request, 'stores/index.html', {'stores': stores})
