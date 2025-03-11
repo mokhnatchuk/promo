@@ -1,0 +1,66 @@
+.promotions-section {
+    padding: 2rem 0;
+}
+
+.section-header {
+    margin-bottom: 2rem;
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.promotions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.promotion-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.promotion-header {
+    margin-bottom: 1rem;
+}
+
+.promotion-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.promotion-dates {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.promotion-content {
+    margin-bottom: 1rem;
+}
+
+.promotion-description {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.discount-info {
+    font-size: 1.2rem;
+    color: #dc3545;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.store-info {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.promotion-footer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}

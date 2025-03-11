@@ -1,6 +1,6 @@
 from django.shortcuts import render
-
-# Create your views here.
+from .models import Promotion
 
 def index(request):
-    return render(request, 'promotions/index.html')
+    promotions = Promotion.objects.all()
+    return render(request, 'promotions/index.html', {'promotions': promotions})

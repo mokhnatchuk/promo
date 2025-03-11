@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}П.Р.О.М.О.{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <div class="logo">
+                    <a href="{% url 'home' %}">П.Р.О.М.О.</a>
+                </div>
+                <div class="nav-links">
+                    <a href="{% url 'products' %}" class="nav-link">Товари</a>
+                    <a href="{% url 'promotions' %}" class="nav-link">Акції</a>
+                    <a href="{% url 'stores' %}" class="nav-link">Магазини</a>
+                    <a href="{% url 'map' %}" class="nav-link">Карта</a>
+                </div>
+                <div class="auth-buttons">
+                    {% if user.is_authenticated %}
+                        <span class="user-greeting">{{ user.username }}</span>
+                        <form method="post" action="{% url 'logout' %}" class="logout-form">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-logout">Вийти</button>
+                        </form>
+                    {% else %}
+                        <a href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-login">Увійти</a>
+                    {% endif %}
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div class="message {% if message.tags %}message-{{ message.tags }}{% endif %}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <script src="{% static 'js/messages.js' %}"></script>
+    {% block page_js %}{% endblock %}
+</body>
+</html>

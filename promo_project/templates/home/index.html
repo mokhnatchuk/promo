@@ -1,0 +1,86 @@
+{% load static %}
+<!doctype html>
+<html lang="uk">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home</title>
+        <link rel="stylesheet" href="{% static 'home/css/style.css' %}" />
+    </head>
+    <body>
+        <header>
+            <div class="header-content">
+                <h1>П.Р.О.М.О.</h1>
+                <nav>
+                    <div class="nav-links">
+                        <a href="{% url 'products' %}">Товари</a>
+                        <a href="{% url 'promotions' %}">Акції</a>
+                        <a href="{% url 'stores' %}">Магазини</a>
+                        <a href="{% url 'map' %}">Карта</a>
+                    </div>
+                    <div class="auth-buttons">
+                        {% if user.is_authenticated %}
+                        <span>Вітаємо, {{ user.username }}!</span>
+                        <form method="post" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <button type="submit">Вийти</button>
+                        </form>
+                        {% else %}
+                        <a
+                            href="{% url 'social:begin' 'google-oauth2' %}"
+                            class="login-btn"
+                            >Увійти</a
+                        >
+                        {% endif %}
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h2>Знаходь найкращі акції у своєму місті</h2>
+
+                <div class="features">
+                    <h3>Що ти можеш робити з П.Р.О.М.О.?</h3>
+
+                    <div class="features-grid">
+                        <div class="feature">
+                            <h4>Шукай акції та знижки</h4>
+                            <p>
+                                Знаходь актуальні акційні пропозиції саме на ті
+                                товари, які тебе цікавлять
+                            </p>
+                        </div>
+
+                        <div class="feature">
+                            <h4>Порівнюй товари</h4>
+                            <p>
+                                Аналізуй, де обраний товар є найвигіднішим за
+                                ціною та умовами акції, економлячи час на пошуки
+                            </p>
+                        </div>
+
+                        <div class="feature">
+                            <h4>Переглядай акції на мапі</h4>
+                            <p>
+                                Використовуй зручний спосіб перегляду акцій, з
+                                відображенням на мапі міста та зручними
+                                фільтрами
+                            </p>
+                        </div>
+
+                        <div class="feature">
+                            <h4>Додавай свої акції</h4>
+                            <p>
+                                Отримай розширені можливості та самостійно
+                                додавай і оновлюй інформацію про акційні
+                                пропозиції
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
