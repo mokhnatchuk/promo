@@ -8,8 +8,33 @@
 {% block title %}Акції{% endblock %}
 
 {% block content %}
-<div class="container">
-    <!-- Ваш контент -->
+<div class="container promotions-section">
+    <h1 class="section-header">Актуальні акції</h1>
+    
+    <div class="filters">
+        <input type="text" placeholder="Пошук..." id="search">
+    </div>
+    
+    <div class="promotions-grid">
+        {% for promotion in promotions %}
+        <div class="promotion-card">
+            <div class="promotion-header">
+                <h2 class="promotion-title">{{ promotion.title }}</h2>
+                <p class="promotion-dates">{{ promotion.start_date }} - {{ promotion.end_date }}</p>
+            </div>
+            <div class="promotion-content">
+                {% if promotion.image %}
+                <img src="{{ promotion.image.url }}" alt="{{ promotion.title }}" class="promotion-image">
+                {% endif %}
+                <p class="promotion-description">{{ promotion.description }}</p>
+                <p class="discount-info">Знижка: {{ promotion.discount }}</p>
+                <p class="store-info">Діє у: {{ promotion.store.name }}</p>
+            </div>
+        </div>
+        {% empty %}
+        <p>Наразі немає активних акцій.</p>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
 

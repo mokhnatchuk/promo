@@ -1,13 +1,9 @@
-.products-section {
+.products-section { 
     padding: 2rem 0;
 }
 
 .section-header {
     margin-bottom: 2rem;
-}
-
-.section-header h1 {
-    margin-bottom: 1rem;
 }
 
 .filters {
@@ -69,8 +65,7 @@
     margin: 0.5rem 0;
 }
 
-.product-actions {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
+.product-description {
+    color: #666;
+    margin-top: 0.5rem;
 }

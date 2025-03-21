@@ -9,7 +9,53 @@
 
 {% block content %}
 <div class="container">
-    <!-- Ваш контент -->
+    <h1 class="section-header">Наші магазини</h1>
+
+    <!-- Фільтри (можна розширити) -->
+    <div class="filters">
+        <input type="text" id="search" placeholder="Пошук за назвою...">
+    </div>
+
+    <!-- Список магазинів -->
+    <div class="stores-grid">
+        {% for store in stores %}
+            <div class="store-card">
+                <div class="store-header">
+                    <h2 class="store-name">{{ store.name }}</h2>
+                </div>
+                <div class="store-info">
+                    <p><strong>Адреса:</strong> {{ store.address }}</p>
+                    <p><strong>Місто:</strong> {{ store.city }}</p>
+                    <p><strong>Години роботи:</strong> {{ store.hours }}</p>
+                    {% if store.phone %}
+                        <p><strong>Телефон:</strong> {{ store.phone }}</p>
+                    {% endif %}
+                    {% if store.email %}
+                        <p><strong>Email:</strong> <a href="mailto:{{ store.email }}">{{ store.email }}</a></p>
+                    {% endif %}
+                </div>
+            </div>
+        {% empty %}
+            <p>Магазини не знайдено.</p>
+        {% endfor %}
+    </div>
+
+    <!-- Пагінація -->
+    {% if is_paginated %}
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page=1" class="pagination-link">Перша</a>
+            <a href="?page={{ page_obj.previous_page_number }}" class="pagination-link">‹</a>
+        {% endif %}
+
+        <span class="pagination-link active">{{ page_obj.number }}</span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="pagination-link">›</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}" class="pagination-link">Остання</a>
+        {% endif %}
+    </div>
+    {% endif %}
 </div>
 {% endblock %}
 
